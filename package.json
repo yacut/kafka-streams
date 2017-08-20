@@ -9,6 +9,8 @@
     "test-unit": "_mocha --recursive -R spec test/unit",
     "test-int": "istanbul cover _mocha -- --recursive --timeout 12500 -R spec test/int && istanbul check-coverage --statements 60",
     "test": "npm run test-unit && npm run test-int",
+    "lint": "eslint .",
+    "fix": "eslint --fix .",
     "jsdoc": "rm -r ./docs/jsdoc && jsdoc ./lib --recurse -R ./README.md -d ./docs/jsdoc",
     "jsdoc2md": "rm ./docs/doc.md && jsdoc2md -f ./lib/**/*.js -d > ./docs/doc.md",
     "docs": "npm run jsdoc && npm run jsdoc2md"
@@ -49,6 +51,7 @@
   },
   "devDependencies": {
     "async": "~2.5.0",
+    "eslint": "^4.5.0",
     "istanbul": "~0.4.2",
     "jsdoc": "^3.5.3",
     "jsdoc-to-markdown": "~3.0.0",
